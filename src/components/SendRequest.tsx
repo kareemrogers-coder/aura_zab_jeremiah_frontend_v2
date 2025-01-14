@@ -1,5 +1,4 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import LoginButton from "./LoginButton";
 
 // component to send JWT to backend and validate user.
 
@@ -9,7 +8,7 @@ const SendRequest = () => {
   const fetchProtectedData = async () => {
     const token = await getAccessTokenSilently();
     console.log("JWT from Auth0:", token);
-    const response = await fetch("http://127.0.0.1:5000/users/login", {
+    const response = await fetch("https://aura-library.onrender.com/users/login", {
       //this endpoint will be different, im just using the localhost as a placeholder
       method: 'POST',
       headers: {
